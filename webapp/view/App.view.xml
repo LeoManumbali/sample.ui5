@@ -1,0 +1,17 @@
+<mvc:View
+	controllerName="sap.ui.bootcamp.controller.App"
+	xmlns="sap.m"
+	xmlns:mvc="sap.ui.core.mvc">
+	<Text text="Username"/>
+	<Input value="{try>/field/username}"
+			description="Hello {try>/field/username}"
+			valueLiveUpdate="true"
+			id="uname"
+			type="Text"
+			width="100%"
+			/>
+	<Text text="Password"/>
+	<Input id="pword" type="Password"/>
+	<Button id="Login" text="{i18n>loginButtonText}" type="Accept" press="onLoginPress"/>
+	<!--<Button id="Login" text="{try>/field/tryobj/field1}" type="Accept" press="onLoginPress"/>-->
+</mvc:View>
