@@ -27,6 +27,8 @@ sap.ui.define([
 					bundleName:"sap.ui.bootcamp.i18n.i18n"
 				});
 				this.getView().setModel(i18nModel,"i18n");
+				
+				//var oTest = this.getView().;
 			},
 
 		/**
@@ -85,7 +87,21 @@ sap.ui.define([
 				// console.log(sMessage);
 			}
 			
-		}
+		},
+		
+		// _getDialog: function() {
+		// 	if(!this._oDialog) {
+		// 		this._oDialog = sap.ui.xmlfragment("sap.ui.bootcamp.view.LoginDialog");
+		// 		this.getView().addDependent(this._oDialog);
+		// 	}
+		// 	return this._oDialog;
+		// },
+		
+		onOpenDialog: function() {
+			// this._getDialog().open();
+			this.getOwnerComponent().loginDialog.open(this.getView());
+			console.log(this.getView());			
+		}		
 
 	});
 
