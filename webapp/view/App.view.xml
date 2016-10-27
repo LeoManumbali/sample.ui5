@@ -6,6 +6,7 @@
 				</headerContent>			
 			<content>
 				<mvc:XMLView viewName="sap.ui.bootcamp.view.LoginPanel"/>
+				<mvc:XMLView viewName="sap.ui.bootcamp.view.InvoiceList"/>
 				<!--<Panel headerText="{i18n>appTitle}" class="sapUiResponsiveContentPadding" width="auto">-->
 					<!--expandAnimation="true" class="sapUiResponsiveMargin"-->
 				<!--	<Text text="Username" class="myCustomText sapThemeHighlight-asColor"/>-->

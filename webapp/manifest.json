@@ -13,6 +13,15 @@
 		"sourceTemplate": {
 			"id": "ui5template.basicSAPUI5ApplicationProject",
 			"version": "1.32.0"
+		},
+		"dataSources": {
+			"invoiceRemote": {
+				"uri": "/destinations/northwind/V3/Northwind/Northwind.svc/",
+				"type": "OData",
+				"settings": {
+					"odataVersion":"2.0"
+				}
+			}
 		}
 	},
 
@@ -62,6 +71,13 @@
 				"settings": {
 					"bundleName": "sap.ui.bootcamp.i18n.i18n"
 				}
+			},
+			"invoicex": {
+				"type": "sap.ui.model.json.JSONModel",
+				"uri": "Invoices.json"
+			},
+			"invoice": {
+				"dataSource": "invoiceRemote"
 			}
 		},
 		"resources": {

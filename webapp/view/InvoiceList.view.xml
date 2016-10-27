@@ -1,0 +1,46 @@
+<mvc:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" controllerName="sap.ui.bootcamp.controller.InvoiceList"
+	xmlns:html="http://www.w3.org/1999/xhtml">
+<!--<mvc:View-->
+<!--   xmlns="sap.m"-->
+<!--   xmlns:mvc="sap.ui.core.mvc">-->
+   <List
+      class="sapUiResponsiveMargin"
+      width="auto"
+      items="{
+    		path:'invoice>/Invoices',
+    		sorter:{
+    			path:'ShipperName',
+    			group:true
+    			}
+    		}" 
+      id="invoiceList">
+   		<headerToolbar>
+   			<Toolbar>
+   				<Title text="{i18n>invoiceListTitle}"/>
+   				<ToolbarSpacer/>
+   				<SearchField width="50%" search="onFilterInvoices" selectOnFocus="false"/>
+   			</Toolbar>
+   		</headerToolbar>
+   	<!--headerText="{i18n>invoiceListTitle}"-->
+      <items>
+         <ObjectListItem
+            title="{invoice>Quantity} x {invoice>ProductName}"
+            number="{
+            	parts:[{path:'invoice>ExtendedPrice'}, {path:'view>/currency'}],
+            	type:'sap.ui.model.type.Currency',
+            	formatOptions:{
+            		showMeasure: false
+            	}
+            }"
+            numberUnit="{view>/currency}"
+            numberState="{= ${invoice>ExtendedPrice} > 50 ? 'Error' : 'Success'}">
+         	<firstStatus>
+         		<ObjectStatus text="{
+         			path:'invoice>Status',
+         			formatter:'.formatter.statusText'
+         		}"/>
+         	</firstStatus>	
+         </ObjectListItem>
+      </items>
+   </List>
+</mvc:View>
